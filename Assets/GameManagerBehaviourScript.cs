@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManagerBehaviourScript : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class GameManagerBehaviourScript : MonoBehaviour
     public GameObject gameOverImage;
     public GameObject gameOverImage2;
     public GameObject startButton;
+    public TextMeshProUGUI scoreText;
+    private float score = 0f;
+    private bool isPlaying = true;
 
     private void Start()
     {
@@ -30,5 +34,24 @@ public class GameManagerBehaviourScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         startButton.SetActive(false);
+    }
+
+    public void StopScore()
+    {
+        isPlaying = false;
+    }
+    public void RestartScore() 
+    { 
+        isPlaying = true;
+        score = 0f;
+    }
+
+    private void Update()
+    {
+        if (isPlaying)
+        {
+            score += Time.deltaTime * 10;
+            scoreText.text = "Score: " + Mathf.FloorToInt(score).ToString();
+        }
     }
 }

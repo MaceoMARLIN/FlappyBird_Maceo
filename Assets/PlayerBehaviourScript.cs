@@ -32,6 +32,7 @@ public class PlayerBehaviourScript : MonoBehaviour
         {
             Debug.Log("Game Over");
             FindAnyObjectByType<GameManagerBehaviourScript>().GameOver();
+            FindAnyObjectByType<GameManagerBehaviourScript>().StopScore();
         }
     }
 

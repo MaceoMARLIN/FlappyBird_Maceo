@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 1052345634}
   m_Layer: 0
   m_Name: base_0 (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1186,9 +1186,10 @@ GameObject:
   - component: {fileID: 1636861319}
   - component: {fileID: 1636861318}
   - component: {fileID: 1636861321}
-  - component: {fileID: 1636861323}
   - component: {fileID: 1636861322}
   - component: {fileID: 1636861324}
+  - component: {fileID: 1636861325}
+  - component: {fileID: 1636861326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1281,21 +1282,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1636861320
-Transform:
+--- !u!224 &1636861320
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636861317}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.69, z: -1.31}
+  m_LocalPosition: {x: 0, y: 0, z: -1.31}
   m_LocalScale: {x: 1.9754769, y: 1.9754769, z: 1.9754769}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.1, y: 0.69}
+  m_SizeDelta: {x: 0.34, y: 0.24}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636861321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,23 +1360,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!111 &1636861323
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636861317}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 0}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!58 &1636861324
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1408,6 +1396,36 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.16999999
+--- !u!95 &1636861325
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636861317}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1faf0025b7b5a04a9bf3ed8d5d689b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!222 &1636861326
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636861317}
+  m_CullTransparentMesh: 1
 --- !u!1 &1840013589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1488,7 @@ GameObject:
   - component: {fileID: 1918629693}
   m_Layer: 0
   m_Name: base_0
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1606,6 +1624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Down_Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 6018652361900268397, guid: 5b1f7c9b335e5224d9a0ac199a84a8c4, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6250944185190547542, guid: 5b1f7c9b335e5224d9a0ac199a84a8c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.72
@@ -1706,6 +1728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Up_Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 5195041038935911125, guid: 11e59e974e95e644aa0d548b34e03e69, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1719,7 +1745,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1636861320}
   - {fileID: 6925939837749093802}
   - {fileID: 8701335167451382284}
   - {fileID: 1918629695}
@@ -1733,3 +1758,4 @@ SceneRoots:
   - {fileID: 941815785}
   - {fileID: 1098030200}
   - {fileID: 1840013591}
+  - {fileID: 1636861320}

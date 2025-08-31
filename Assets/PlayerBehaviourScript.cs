@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviourScript : MonoBehaviour
 {
@@ -25,8 +26,13 @@ public class PlayerBehaviourScript : MonoBehaviour
         }
     }
 
-
-
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Game Over");
+            FindAnyObjectByType<GameManagerBehaviourScript>().GameOver();
+        }
+    }
 
 }

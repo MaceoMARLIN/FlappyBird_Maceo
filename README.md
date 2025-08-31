@@ -37,7 +37,7 @@ git clone <URL_DU_DEPOT>
 
 Ouvrir le projet avec Unity Hub.
 
-Sélectionner la scène principale (MainScene ou celle que tu as créée).
+Sélectionner la scène principale.
 
 Lancer le jeu avec le bouton Play dans l’éditeur Unity.
 
